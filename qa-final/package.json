@@ -1,0 +1,28 @@
+{
+  "name": "qa-final-toolshop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Examen final Pruebas y Calidad de Software (ECCI Cali 2026-II) - suite Playwright sobre Toolshop sprint5 y sprint5-with-bugs",
+  "author": "Victor Manuel Marin Marin, Iker Miguel Mainguez Romero",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:sprint5": "cross-env TARGET=sprint5 playwright test",
+    "test:bugs": "cross-env TARGET=with-bugs playwright test",
+    "test:bugs:hosted": "cross-env TARGET=with-bugs-hosted playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:list": "playwright test --list",
+    "report:sprint5": "playwright show-report reports/sprint5/html",
+    "report:bugs": "playwright show-report reports/with-bugs/html",
+    "report:bugs:hosted": "playwright show-report reports/with-bugs-hosted/html"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0",
+    "@types/node": "^24.0.7",
+    "cross-env": "^10.1.0"
+  }
+}
